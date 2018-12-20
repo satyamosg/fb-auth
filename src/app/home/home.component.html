@@ -1,0 +1,12 @@
+<h1>
+  Welcome {{ auth.user?.email }} to your app!
+</h1>
+<p>You are {{ (auth.isLoggedIn ? ' ':'not ') }}logged in</p>
+<p>{{user | json}}</p>
+
+
+<ul>
+  <li *ngFor="let item of items | async">{{ item.name }}</li>
+</ul>
+
+<button class="btn btn-lg btn-danger" (click)="logout()">Logout</button>
