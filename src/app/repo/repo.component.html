@@ -1,3 +1,6 @@
-<p>
-  repo works!
+<p *ngIf="(fact | async)">
+  {{ (fact | async)?.text }}
+</p>
+<p *ngIf="error">
+  This is not the not cat you're not looking for.. not
 </p>

@@ -1,3 +1,3 @@
-<p>
-  repos works!
-</p>
+<ul *ngFor = "let fact of (facts | async)?.all">
+  <li>{{ fact.text }} <a [routerLink]="['/facts',fact._id]">learn more</a></li>
+</ul>

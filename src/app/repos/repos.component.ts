@@ -1,4 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export interface ICat {
+  _id: number;
+  text: string;
+}
+
+export interface ICatAPI {
+  all: ICat[];
+}
 
 @Component({
   selector: 'app-repos',
@@ -7,9 +18,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReposComponent implements OnInit {
 
-  constructor() { }
+  private facts: Observable<ICatAPI[]>;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.facts = this.http.get<ICatAPI[]>('https://cat-fact.herokuapp.com/facts');
   }
 
 }

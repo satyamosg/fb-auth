@@ -15,6 +15,8 @@ import { AuthGuard } from "./services/auth-guard.service";
 import { RepoComponent } from './repo/repo.component';
 import { ReposComponent } from './repos/repos.component';
 
+import { HttpClientModule } from "@angular/common/http";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,8 +35,11 @@ import { ReposComponent } from './repos/repos.component';
     RouterModule.forRoot([
       { path: "", component: HomeComponent, canActivate: [AuthGuard]},
       { path: "login", component: LoginComponent},
-      { path: "register", component: RegisterComponent}
-    ])
+      { path: "register", component: RegisterComponent},
+      { path: "facts", component: ReposComponent},
+      { path: "facts/:id", component: RepoComponent}
+    ]),
+    HttpClientModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
