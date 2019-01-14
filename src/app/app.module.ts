@@ -12,13 +12,17 @@ import { RouterModule } from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from "@angular/forms";
 import { AuthGuard } from "./services/auth-guard.service";
+import { RepoComponent } from './repo/repo.component';
+import { ReposComponent } from './repos/repos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    RepoComponent,
+    ReposComponent
   ],
   imports: [
     BrowserModule,
